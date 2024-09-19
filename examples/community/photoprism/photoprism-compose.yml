@@ -61,6 +61,7 @@ services:
         - "bunkerweb.REVERSE_PROXY_HOST=http://photoprism:2342"             #For bunkerweb
         - "bunkerweb.REVERSE_PROXY_WS=yes"                                  #For bunkerweb
         - "bunkerweb.MODSECURITY_SEC_AUDIT_LOG_PARTS=ABFHZ" # remove the request body (option C) from the logs
+        - "bunkerweb.BAD_BEHAVIOR_STATUS_CODES=400 401 403 404 429 444"     #android client tries to create directories and gives 405 error
     environment:
       PHOTOPRISM_ADMIN_USER: "admin"                 # admin login username
       PHOTOPRISM_ADMIN_PASSWORD: "insecure"          # initial admin password (8-72 characters)
